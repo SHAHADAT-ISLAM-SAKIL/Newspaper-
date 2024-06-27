@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Review Submitted</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Thank you for your review, {{ review.user.username }}!</h1>
+        <p>We appreciate you taking the time to provide feedback. Here are the details of your review:</p>
+        <p><strong>Article:</strong> {{ review.article }}</p>
+        <p><strong>Rating:</strong> {{ review.rating }}</p>
+        <p><strong>Comments:</strong> {{ review.body}}</p>
+        <p>We value your input and hope you continue to enjoy our products.</p>
+        <p>Best regards,</p>
+        <p>Your Company Name</p>
+        <div class="footer">
+            <!-- <p>&copy;  Your Company Name. All rights reserved.</p> -->
+            <p>This email was sent to {{ review.user.email }}</p>
+        </div>
+    </div>
+</body>
+</html>

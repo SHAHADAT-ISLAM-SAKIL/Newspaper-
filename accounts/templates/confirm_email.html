@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes colorChange {
+            0% { color: #3498db; }
+            25% { color: #9b59b6; }
+            50% { color: #e74c3c; }
+            75% { color: #f1c40f; }
+            100% { color: #2ecc71; }
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #adadad;
+            font-family: Arial, sans-serif;
+        }
+
+        .email-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 4px 4px 8px rgba(242, 48, 216, 0.404);
+            animation: fadeIn 2s ease-in-out;
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h3 {
+            color: #2c3e50;
+            animation: colorChange 5s infinite;
+            margin: 0 0 20px 0;
+        }
+
+        p {
+            color: #7f8c8d;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .confirmation-link a {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .confirmation-link a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <h3>Thanks for creating an account on our platform</h3>
+        <p>Click the below link to verify your account</p>
+        <p class="confirmation-link">
+            Confirmation Link: <a href="{{confirm_link}}" target="_blank">{{confirm_link}}</a>
+        </p>
+    </div>
+</body>
+</html>
