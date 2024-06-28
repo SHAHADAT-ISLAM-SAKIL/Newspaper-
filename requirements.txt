@@ -48,7 +48,6 @@ praw
 prawcore
 protobuf
 psycopg2
-psycopg2-binary
 PyAutoGUI
 pyenchant
 pygame
