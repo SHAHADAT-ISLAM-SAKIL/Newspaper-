@@ -17,7 +17,6 @@ django-environ
 django-filter
 djangorestframework
 djangorestframework-simplejwt
-EasyProcess
 entrypoint2
 et-xmlfile
 feedfinder2
