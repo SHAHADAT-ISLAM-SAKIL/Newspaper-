@@ -10,7 +10,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env("SECRET_KEY", default="default-secret-key")
 DEBUG = env.bool("DEBUG", default=True)
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000/', 'https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://newspaper-2jgz.onrender.com', 'https://*.127.0.0.1']
 
 # Application definition
 INSTALLED_APPS = [
