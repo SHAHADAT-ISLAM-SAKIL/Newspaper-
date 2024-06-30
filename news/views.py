@@ -37,9 +37,8 @@ class ArticleViewSet(viewsets.ModelViewSet):
         self.perform_destroy(instance)
         return Response(status=status.HTTP_204_NO_CONTENT)
     
-     # custom query kortechi
     def get_queryset(self):
-        queryset = super().get_queryset() # 7 no line ke niye aslam ba patient ke inherit korlam
+        queryset = super().get_queryset()
         print(self.request.query_params)
         user_id = self.request.query_params.get('user_id')
         if user_id:
@@ -49,13 +48,12 @@ class ArticleViewSet(viewsets.ModelViewSet):
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
-    
 
 class RatingViewSet(viewsets.ModelViewSet):
     queryset = Rating.objects.all()
     serializer_class = RatingSerializer
     
-    def create(self, request, *args, **kwargs):  # use create instead of post
+    def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         review = serializer.save()
@@ -69,9 +67,11 @@ class RatingViewSet(viewsets.ModelViewSet):
         return Response({"detail": "Check your email for Review Submitted"}, status=status.HTTP_201_CREATED)
         
     def get_queryset(self):
-        queryset = super().get_queryset() # 7 no line ke niye aslam ba patient ke inherit korlam
+        queryset = super().get_queryset()
         print(self.request.query_params)
-       category_id = self.request.query_params.get('category_id')
-        if user_id:
-            queryset = queryset.filter(category_id=category_id)
+        article_id = self.request.query_params.get('article_id')
+        if article_id:
+            queryset = queryset.filter(article_id=article_id)
         return queryset
+
+
