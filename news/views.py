@@ -68,7 +68,7 @@ class RatingViewSet(viewsets.ModelViewSet):
         email.send()
         return Response({"detail": "Check your email for Review Submitted"}, status=status.HTTP_201_CREATED)
         
-     def get_queryset(self):
+    def get_queryset(self):
         queryset = super().get_queryset() # 7 no line ke niye aslam ba patient ke inherit korlam
         print(self.request.query_params)
        category_id = self.request.query_params.get('category_id')
